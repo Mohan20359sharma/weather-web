@@ -19,21 +19,26 @@ async function checkWeather(city) {
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
         document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
         document.querySelector(".wind").innerHTML = Math.round(data.wind.speed) + " km/h";
-        
+
         if(data.weather[0].main==="Clouds"){
         weatherIcon.src="images/clouds.png";
+        document.querySelector(".name").innerHTML="Clouds";
         }
         else if(data.weather[0].main==="Clear"){
             weatherIcon.src="images/clear.png";
+        document.querySelector(".name").innerHTML="Clear";
         }
         else if(data.weather[0].main==="Rain"){
             weatherIcon.src="images/rain.png";
+        document.querySelector(".name").innerHTML="Rain";
         }
         else if(data.weather[0].main==="Drizzle"){
             weatherIcon.src="images/drizzle.png";
+        document.querySelector(".name").innerHTML="Drizzle";
         }
         else if(data.weather[0].main==="Mist"){
             weatherIcon.src="images/mist.png";
+        document.querySelector(".name").innerHTML="Mist";
         }
     } catch (error) {
         // No alert or console log - silent fail
